@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  div(class="container")
+    form(name="updateAddressbookData", action="/updateAddressbookData", method="post", data-ajax = "false")
+      h2 Add new contact information
+      input(type="text", name="username", placeholder="Enter name")
+      input(type="text", name="address", placeholder="Enter address")
+      input(type="text", name="email", placeholder="Enter email")
+      input(type="text", name="phonenumber", placeholder="Enter phonenumber")
+      input(type="date", name="birthday", placeholder="Enter birthday")
+      input(type="text", name="generalinfo", placeholder="Enter generalinfo")
+      input(type="submit", value="Add new contact")

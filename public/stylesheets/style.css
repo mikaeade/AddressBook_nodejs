@@ -1,0 +1,33 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00b7ff;
+}
+.container {
+  position: relative;
+  margin: 100px auto auto;
+  width: 300px;
+}
+.container h1 {
+  color: #00f;
+}
+.address {
+  font-size: 14px;
+  color: #00f;
+  position: relative;
+  margin: 100px auto auto;
+}
+.taulukko {
+  position: relative;
+  margin: 100px auto auto;
+  width: 300px;
+}
+.addToAddressBook {
+  font-size: 24px;
+  color: #00f;
+}
+.addToAddressBook main h1 {
+  background: #ccc;
+}

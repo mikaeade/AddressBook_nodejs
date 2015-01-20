@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  div(class='container')
+    h1 #{name}'s Contact Information
+    
+    ul(data-role='listview', data-inset="true")
+        li Name: #{name}
+        li Address: #{address}
+        li Email: #{email}
+        li Phonenumber: #{phonenumber}
+        li Birthday: #{birthday}
+        li Generalinfo: #{generalinfo}   
+    a(href="/getaddressbook") return to contacts.

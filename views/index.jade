@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  div(class="container")
+    form(name="login", action="/login", method="post")
+      h2 Login Addressbook
+      label User Name: 
+      input(type="text", name="username", placeholder="Username")
+      label Password: 
+      input(type="text", name="password", placeholder="Password")
+      p
+      input(type="submit", value="login")
+      h3 Not registered yet
+      a(href="/register") Register here
+  
