@@ -1,9 +1,9 @@
 extends layout
 
 block content
+  h1(id="high") Addressbook Application
   div(class='container')
-    h1 #{name}'s Contact Information
-    
+    h1(id="hh") #{name}'s Contact Information  
     ul(data-role='listview', data-inset="true")
         li Name: #{name}
         li Address: #{address}
@@ -12,3 +12,11 @@ block content
         li Birthday: #{birthday}
         li Generalinfo: #{generalinfo}   
     a(href="/getaddressbook") return to contacts.
+    
+  script.
+        $(".container").mouseover(function() {
+            $(this).css('background-color', 'yellow');
+            });
+        $( ".container" ).mouseleave(function() {
+            $(this).css('background-color', 'white');
+            });

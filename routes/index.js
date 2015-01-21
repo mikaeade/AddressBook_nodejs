@@ -2,9 +2,8 @@ var express = require('express');
 var router = express.Router();
 // incluudaa function
 var db = require('../mymodules/dbconnection');
-var loggedin = false;
-var userName = "";
 // AddressBook ja Register tietokanta
+var userName="";
 
 router.get('/', function(req, res) {
     console.log("index")
@@ -52,14 +51,19 @@ router.login = function(req, res){
      } 
      else if(foundRegisterData.length === 0)
      {
-            console.log("could not find data with given data");
-            res.render('notidentified');
+        console.log("could not find data with given data");
+        res.render('notidentified');
      }
      else{         
         console.log("find from db oK");
         // temp solution to check if logged, change to use Session 
-        loggedin = true;
+        // loggedin = true;
         userName = foundRegisterData[0].username;
+        
+        //use session
+        console.log("LOGGED IN");
+        req.session.loggedin = true;
+        req.session.username = foundRegisterData[0].username;
         res.redirect('/getaddressbook');
      }
     });   
@@ -67,16 +71,24 @@ router.login = function(req, res){
 
 router.getaddressbook = function(req, res){  
     // hae tiedot tietokannasta
-    db.AddressBook.find({owner: userName}, function(err, addressbookData){
-    if(err)
-    {
-        console.log("error fetching addressBook data");
+    console.log("getaddressbook");
+    if(req.session.loggedin){
+        console.log("logged in");
+        db.AddressBook.find({owner: userName}, function(err, addressbookData){
+        if(err)
+        {
+            console.log("error fetching addressBook data");
+        }   
+        else{         
+            console.log("getaddressbook find from db oK");
+            res.render('names', {addressbookData: addressbookData, owner: userName});
+        }
+        });
     }
-    else{         
-        console.log("getaddressbook find from db oK");
-        res.render('names', {addressbookData: addressbookData, userName:userName});
+    else{
+        console.log("not logged in");
+        res.render('/index');
     }
-    });
 }
 
 router.new_contact = function(req, res){
@@ -87,8 +99,9 @@ router.new_contact = function(req, res){
 router.update_address_book = function(req, res){
     
    // päivitä AddressBook database
-   console.log("update_address_book");
-   var AddressbookFormat = new db.AddressBook({
+   if(req.session.loggedin){    
+    console.log("update_address_book");
+    var AddressbookFormat = new db.AddressBook({
         owner: userName,
         name: req.body.username,
         address: req.body.address,
@@ -107,21 +120,28 @@ router.update_address_book = function(req, res){
             console.log("Addressbook save successfully");
             res.redirect('/getaddressbook');
         }  
-   }); 
+   });
+   }
+   else{
+      res.redirect('/'); 
+   }
 }
 
 router.get_contacts = function(req, res){
-
-    console.log("get_contacts");
-    db.AddressBook.findById(req.query.id,function(err,data){
-    if(err){
-        res.render('generalerror');
+    if(req.session.loggedin){     
+        console.log("get_contacts");
+        db.AddressBook.findById(req.query.id,function(err,data){
+        if(err){
+            res.render('generalerror');
+        }
+        else{
+            res.render('contactsData',data);
+        }
+        });
     }
     else{
-        res.render('contactsData',data);
+        res.redirect('/'); 
     }
-});
-
 }
 
 module.exports = router;

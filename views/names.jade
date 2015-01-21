@@ -1,8 +1,9 @@
 extends layout
 
 block content
+  h1(id="high") Addressbook Application
   div(class='container')
-    h1 #{userName}'s AddressBook
+    h1 #{owner}'s AddressBook
     ul(data-role='listview', data-inset="true")
       each person in addressbookData
         li
@@ -10,3 +11,10 @@ block content
     p
     div     
       a(href="/new_contact") Add a contact to Addressbook.
+  script.
+        $(".container").mouseover(function() {
+            $(this).css('background-color', 'yellow');
+            });
+        $( ".container" ).mouseleave(function() {
+            $(this).css('background-color', 'white');
+            });      

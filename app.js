@@ -5,12 +5,15 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
-
-
-var db = require('./mymodules/dbconnection');
-
+// need for session, checks if logged in to application, otherwise cannot view
+// other pagers  '/names' etc..
+var session = require('express-session');
 var app = express();
+app.use(session({secret:'qrt54dlkfhfg9094',resave: false,saveUninitialized: true}));
+
+
+var routes = require('./routes/index');
+var db = require('./mymodules/dbconnection');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,8 +27,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
-
-
+ 
 app.use('/', routes);
 app.use('/register', routes.register);
 app.use('/register_user', routes.register_user);

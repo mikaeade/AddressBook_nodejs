@@ -1,15 +1,21 @@
 extends layout
 
 block content
+  h1(id="high") Addressbook Application
   div(class="container")
     form(name="login", action="/login", method="post")
-      h2 Login Addressbook
-      label User Name: 
+      h2(id="hep") Login Addressbook 
       input(type="text", name="username", placeholder="Username")
-      label Password: 
       input(type="text", name="password", placeholder="Password")
       p
       input(type="submit", value="login")
-      h3 Not registered yet
-      a(href="/register") Register here
-  
+      br
+      div(id="registerHere") Not registered yet,
+       a(href="/register")   Register here
+  script.
+        $(".container").mouseover(function() {
+            $(this).css('background-color', 'yellow');
+            });
+        $( ".container" ).mouseleave(function() {
+            $(this).css('background-color', 'white');
+            });
