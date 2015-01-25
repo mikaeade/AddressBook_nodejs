@@ -144,4 +144,127 @@ router.get_contacts = function(req, res){
     }
 }
 
+router.modify = function(req, res){
+    console.log("server modify");
+        if(req.session.loggedin){  
+            console.log(req.query.id);
+            db.AddressBook.findById(req.query.id,function(err,data){
+            if(err){
+                console.log(err);
+                res.render('generalerror');
+            }
+            else{
+                console.log("render modify data");
+                res.render('contactsDataModify',data);
+            }
+        });
+    }
+    else{
+        res.redirect('/'); 
+    }
+}
+
+router.delete = function(req, res){
+    console.log("server delete");
+        if(req.session.loggedin){  
+            console.log(req.query.id);
+            db.AddressBook.findOne(req.query.id,function(err,data){
+            if(err){
+                console.log(err);
+                res.render('generalerror');
+            }
+            else{
+                console.log("delete data");
+                console.log(data);
+                // deletoi tietokannasta
+                if(data.length === 0)
+                {
+                    res.redirect('/getaddressbook');
+                }
+                else{
+                data.remove();
+                //res.send('ok');
+                res.redirect('/getaddressbook');
+                }
+            }
+        });
+    }
+    else{
+        res.redirect('/'); 
+    }
+}
+
+
+router.modifyaddressbookData = function(req, res){
+    console.log("server modify");
+    if(req.session.loggedin){  
+        console.log(req.query.id);
+        db.AddressBook.findById(req.query.id,function(err,data){
+        if(err){
+            console.log(err);
+            res.render('generalerror');
+        }
+        else{
+            console.log("Save modified contact");
+            data.name= req.query.username;
+            data.address= req.query.address;
+            data.email= req.query.email;
+            data.phonenumber= req.query.phonenumber;
+            data.birthday= req.query.birthday;
+            data.generalinfo= req.query.generalinfo;
+            console.log("here 1");
+            data.save(function(err){
+                if(err){
+                    console.log(err);
+                    res.render('error');
+                }
+                else{ 
+                    console.log("yritä getaddressbookiin");
+                    res.redirect('/getaddressbook');
+                    }
+                });
+            }
+        });
+    }
+    else{
+        res.redirect('/'); 
+    }
+}
+
+// JATKA TÄSTÄ
+router.modifyaddressbookData = function(req, res){
+    console.log("server modify");
+    if(req.session.loggedin){  
+        console.log(req.query.id);
+        db.AddressBook.findById(req.query.id,function(err,data){
+        if(err){
+            console.log(err);
+            res.render('generalerror');
+        }
+        else{
+            console.log("Save modified contact");
+            data.name= req.query.username;
+            data.address= req.query.address;
+            data.email= req.query.email;
+            data.phonenumber= req.query.phonenumber;
+            data.birthday= req.query.birthday;
+            data.generalinfo= req.query.generalinfo;
+            console.log("here 1");
+            data.save(function(err){
+                if(err){
+                    console.log(err);
+                    res.render('error');
+                }
+                else{ 
+                    console.log("yritä getaddressbookiin");
+                    res.redirect('/getaddressbook');
+                    }
+                });
+            }
+        });
+    }
+    else{
+        res.redirect('/'); 
+    }
+}
 module.exports = router;

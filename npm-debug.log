@@ -1,13 +1,9 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node',
-1 verbose cli   '/usr/local/bin/npm',
-1 verbose cli   'install',
-1 verbose cli   '–g',
-1 verbose cli   'express-generator' ]
+1 verbose cli [ 'node', '/usr/local/bin/npm', '-g', 'install' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.35
-4 verbose cache add [ '–g', null ]
-5 verbose cache add name=undefined spec="–g" args=["–g",null]
+4 verbose cache add [ '.', null ]
+5 verbose cache add name=undefined spec="." args=[".",null]
 6 verbose parsed url { protocol: null,
 6 verbose parsed url   slashes: null,
 6 verbose parsed url   auth: null,
@@ -17,138 +13,87 @@
 6 verbose parsed url   hash: null,
 6 verbose parsed url   search: null,
 6 verbose parsed url   query: null,
-6 verbose parsed url   pathname: '–g',
-6 verbose parsed url   path: '–g',
-6 verbose parsed url   href: '–g' }
-7 verbose cache add [ 'express-generator', null ]
-8 verbose cache add name=undefined spec="express-generator" args=["express-generator",null]
-9 verbose parsed url { protocol: null,
-9 verbose parsed url   slashes: null,
-9 verbose parsed url   auth: null,
-9 verbose parsed url   host: null,
-9 verbose parsed url   port: null,
-9 verbose parsed url   hostname: null,
-9 verbose parsed url   hash: null,
-9 verbose parsed url   search: null,
-9 verbose parsed url   query: null,
-9 verbose parsed url   pathname: 'express-generator',
-9 verbose parsed url   path: 'express-generator',
-9 verbose parsed url   href: 'express-generator' }
-10 silly lockFile 51e00793-g –g
-11 verbose lock –g /Users/mikaeade/.npm/51e00793-g.lock
-12 silly lockFile 198a68d8-express-generator express-generator
-13 verbose lock express-generator /Users/mikaeade/.npm/198a68d8-express-generator.lock
-14 silly lockFile 51e00793-g –g
-15 silly lockFile 51e00793-g –g
-16 silly lockFile 198a68d8-express-generator express-generator
-17 silly lockFile 198a68d8-express-generator express-generator
-18 verbose addNamed [ '–g', '' ]
-19 verbose addNamed [ null, '*' ]
-20 silly lockFile 72e0e7f9-g –g@
-21 verbose lock –g@ /Users/mikaeade/.npm/72e0e7f9-g.lock
-22 verbose addNamed [ 'express-generator', '' ]
-23 verbose addNamed [ null, '*' ]
-24 silly lockFile bd41e3d3-express-generator express-generator@
-25 verbose lock express-generator@ /Users/mikaeade/.npm/bd41e3d3-express-generator.lock
-26 silly addNameRange { name: '–g', range: '*', hasData: false }
-27 verbose request where is /–g
-28 verbose request registry https://registry.npmjs.org/
-29 verbose request id aa948b5092331de0
-30 verbose url raw /–g
-31 verbose url resolving [ 'https://registry.npmjs.org/', './%E2%80%93g' ]
-32 verbose url resolved https://registry.npmjs.org/%E2%80%93g
-33 verbose request where is https://registry.npmjs.org/%E2%80%93g
-34 info trying registry request attempt 1 at 11:32:32
-35 http GET https://registry.npmjs.org/%E2%80%93g
-36 silly addNameRange { name: 'express-generator', range: '*', hasData: false }
-37 verbose request where is /express-generator
-38 verbose request registry https://registry.npmjs.org/
-39 verbose url raw /express-generator
-40 verbose url resolving [ 'https://registry.npmjs.org/', './express-generator' ]
-41 verbose url resolved https://registry.npmjs.org/express-generator
-42 verbose request where is https://registry.npmjs.org/express-generator
-43 info trying registry request attempt 1 at 11:32:32
-44 verbose etag "9D6BS8QBVECR4UVT0E5JELT7A"
-45 http GET https://registry.npmjs.org/express-generator
-46 http 304 https://registry.npmjs.org/express-generator
-47 silly registry.get cb [ 304,
-47 silly registry.get   { date: 'Mon, 19 Jan 2015 09:32:32 GMT',
-47 silly registry.get     server: 'Apache',
-47 silly registry.get     via: '1.1 varnish',
-47 silly registry.get     'last-modified': 'Mon, 19 Jan 2015 09:32:32 GMT',
-47 silly registry.get     'cache-control': 'max-age=60',
-47 silly registry.get     etag: '"9D6BS8QBVECR4UVT0E5JELT7A"',
-47 silly registry.get     age: '46',
-47 silly registry.get     'x-served-by': 'cache-fra1238-FRA',
-47 silly registry.get     'x-cache': 'HIT',
-47 silly registry.get     'x-cache-hits': '1',
-47 silly registry.get     'x-timer': 'S1421659952.485668,VS0,VE0',
-47 silly registry.get     vary: 'Accept',
-47 silly registry.get     'content-length': '0',
-47 silly registry.get     'keep-alive': 'timeout=10, max=50',
-47 silly registry.get     connection: 'Keep-Alive' } ]
-48 verbose etag https://registry.npmjs.org/express-generator from cache
-49 silly addNameRange number 2 { name: 'express-generator', range: '*', hasData: true }
-50 silly addNameRange versions [ 'express-generator',
-50 silly addNameRange   [ '1.0.0',
-50 silly addNameRange     '3.0.0',
-50 silly addNameRange     '4.0.0',
-50 silly addNameRange     '4.2.0',
-50 silly addNameRange     '4.8.0',
-50 silly addNameRange     '4.9.0',
-50 silly addNameRange     '4.10.0',
-50 silly addNameRange     '4.11.0' ] ]
-51 verbose addNamed [ 'express-generator', '4.11.0' ]
-52 verbose addNamed [ '4.11.0', '4.11.0' ]
-53 silly lockFile cb860965-express-generator-4-11-0 express-generator@4.11.0
-54 verbose lock express-generator@4.11.0 /Users/mikaeade/.npm/cb860965-express-generator-4-11-0.lock
-55 silly lockFile cb860965-express-generator-4-11-0 express-generator@4.11.0
-56 silly lockFile cb860965-express-generator-4-11-0 express-generator@4.11.0
-57 silly lockFile bd41e3d3-express-generator express-generator@
-58 silly lockFile bd41e3d3-express-generator express-generator@
-59 http 404 https://registry.npmjs.org/%E2%80%93g
-60 verbose headers { date: 'Mon, 19 Jan 2015 09:32:32 GMT',
-60 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-60 verbose headers   'content-type': 'application/json',
-60 verbose headers   'cache-control': 'max-age=0',
-60 verbose headers   'content-length': '52',
-60 verbose headers   'accept-ranges': 'bytes',
-60 verbose headers   via: '1.1 varnish',
-60 verbose headers   age: '0',
-60 verbose headers   'x-served-by': 'cache-fra1243-FRA',
-60 verbose headers   'x-cache': 'MISS',
-60 verbose headers   'x-cache-hits': '0',
-60 verbose headers   'x-timer': 'S1421659952.480893,VS0,VE104',
-60 verbose headers   'keep-alive': 'timeout=10, max=50',
-60 verbose headers   connection: 'Keep-Alive' }
-61 silly registry.get cb [ 404,
-61 silly registry.get   { date: 'Mon, 19 Jan 2015 09:32:32 GMT',
-61 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-61 silly registry.get     'content-type': 'application/json',
-61 silly registry.get     'cache-control': 'max-age=0',
-61 silly registry.get     'content-length': '52',
-61 silly registry.get     'accept-ranges': 'bytes',
-61 silly registry.get     via: '1.1 varnish',
-61 silly registry.get     age: '0',
-61 silly registry.get     'x-served-by': 'cache-fra1243-FRA',
-61 silly registry.get     'x-cache': 'MISS',
-61 silly registry.get     'x-cache-hits': '0',
-61 silly registry.get     'x-timer': 'S1421659952.480893,VS0,VE104',
-61 silly registry.get     'keep-alive': 'timeout=10, max=50',
-61 silly registry.get     connection: 'Keep-Alive' } ]
-62 silly lockFile 72e0e7f9-g –g@
-63 silly lockFile 72e0e7f9-g –g@
-64 error 404 404 Not Found: %E2%80%93g
-64 error 404
-64 error 404 '%E2%80%93g' is not in the npm registry.
-64 error 404 You should bug the author to publish it
-64 error 404
-64 error 404 Note that you can also install from a
-64 error 404 tarball, folder, or http url, or git url.
-65 error System Darwin 13.4.0
-66 error command "node" "/usr/local/bin/npm" "install" "–g" "express-generator"
-67 error cwd /Users/mikaeade/Documents/NodeProjects/AddressBook
-68 error node -v v0.10.35
-69 error npm -v 1.4.28
-70 error code E404
-71 verbose exit [ 1, true ]
+6 verbose parsed url   pathname: '.',
+6 verbose parsed url   path: '.',
+6 verbose parsed url   href: '.' }
+7 silly lockFile 3a52ce78- .
+8 verbose lock . /Users/mikaeade/.npm/3a52ce78-.lock
+9 verbose tar pack [ '/Users/mikaeade/.npm/AddressBook/0.0.0/package.tgz', '.' ]
+10 verbose tarball /Users/mikaeade/.npm/AddressBook/0.0.0/package.tgz
+11 verbose folder .
+12 info prepublish AddressBook@0.0.0
+13 silly lockFile 1f1177db-tar tar://.
+14 verbose lock tar://. /Users/mikaeade/.npm/1f1177db-tar.lock
+15 silly lockFile ec84ea11-pm-AddressBook-0-0-0-package-tgz tar:///Users/mikaeade/.npm/AddressBook/0.0.0/package.tgz
+16 verbose lock tar:///Users/mikaeade/.npm/AddressBook/0.0.0/package.tgz /Users/mikaeade/.npm/ec84ea11-pm-AddressBook-0-0-0-package-tgz.lock
+17 silly lockFile 1f1177db-tar tar://.
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile ec84ea11-pm-AddressBook-0-0-0-package-tgz tar:///Users/mikaeade/.npm/AddressBook/0.0.0/package.tgz
+20 silly lockFile ec84ea11-pm-AddressBook-0-0-0-package-tgz tar:///Users/mikaeade/.npm/AddressBook/0.0.0/package.tgz
+21 silly lockFile 3c465a66-de-npm-AddressBook-0-0-0-package /Users/mikaeade/.npm/AddressBook/0.0.0/package
+22 verbose lock /Users/mikaeade/.npm/AddressBook/0.0.0/package /Users/mikaeade/.npm/3c465a66-de-npm-AddressBook-0-0-0-package.lock
+23 silly lockFile 3c465a66-de-npm-AddressBook-0-0-0-package /Users/mikaeade/.npm/AddressBook/0.0.0/package
+24 silly lockFile 3c465a66-de-npm-AddressBook-0-0-0-package /Users/mikaeade/.npm/AddressBook/0.0.0/package
+25 silly lockFile 3a52ce78- .
+26 silly lockFile 3a52ce78- .
+27 silly resolved [ { name: 'AddressBook',
+27 silly resolved     version: '0.0.0',
+27 silly resolved     private: true,
+27 silly resolved     scripts: { start: 'nodemon ./bin/www' },
+27 silly resolved     dependencies:
+27 silly resolved      { 'body-parser': '~1.10.1',
+27 silly resolved        'cookie-parser': '~1.3.3',
+27 silly resolved        debug: '~2.1.1',
+27 silly resolved        express: '~4.11.0',
+27 silly resolved        jade: '~1.9.0',
+27 silly resolved        morgan: '~1.5.1',
+27 silly resolved        'serve-favicon': '~2.2.0',
+27 silly resolved        stylus: '0.42.3',
+27 silly resolved        mongoose: '3.8.21',
+27 silly resolved        mongodb: '1.4.28',
+27 silly resolved        'express-session': '1.10.1' },
+27 silly resolved     readme: '# AddressBook_nodejs\nAddressbook created with nodejs, mongodb, stylus, jade. client -> server -> database\nUser can store contacts to an addressbook.\n--to be added delete option and session control.\n',
+27 silly resolved     readmeFilename: 'README.md',
+27 silly resolved     gitHead: 'b545b5c5b24b1b107a8b936e12cf484e92a9e57a',
+27 silly resolved     description: 'Addressbook created with nodejs, mongodb, stylus, jade. client -> server -> database User can store contacts to an addressbook. --to be added delete option and session control.',
+27 silly resolved     _id: 'AddressBook@0.0.0',
+27 silly resolved     _shasum: 'aaabc81a1369d5292b3836028f0c48d5b702bf0b',
+27 silly resolved     _from: '.' } ]
+28 info install AddressBook@0.0.0 into /usr/local/lib
+29 info installOne AddressBook@0.0.0
+30 verbose lib/node_modules/AddressBook unbuild
+31 verbose tar unpack /Users/mikaeade/.npm/AddressBook/0.0.0/package.tgz
+32 silly lockFile a6819386-cal-lib-node-modules-AddressBook tar:///usr/local/lib/node_modules/AddressBook
+33 verbose lock tar:///usr/local/lib/node_modules/AddressBook /Users/mikaeade/.npm/a6819386-cal-lib-node-modules-AddressBook.lock
+34 silly lockFile ec84ea11-pm-AddressBook-0-0-0-package-tgz tar:///Users/mikaeade/.npm/AddressBook/0.0.0/package.tgz
+35 verbose lock tar:///Users/mikaeade/.npm/AddressBook/0.0.0/package.tgz /Users/mikaeade/.npm/ec84ea11-pm-AddressBook-0-0-0-package-tgz.lock
+36 silly gunzTarPerm modes [ '755', '644' ]
+37 error Error: EACCES, mkdir '/usr/local/lib/node_modules/AddressBook'
+37 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/AddressBook']
+37 error   errno: 3,
+37 error   code: 'EACCES',
+37 error   path: '/usr/local/lib/node_modules/AddressBook',
+37 error   fstream_type: 'Directory',
+37 error   fstream_path: '/usr/local/lib/node_modules/AddressBook',
+37 error   fstream_class: 'DirWriter',
+37 error   fstream_stack:
+37 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+37 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
+37 error      'Object.oncomplete (fs.js:108:15)' ] }
+38 error Please try running this command again as root/Administrator.
+39 error System Darwin 13.4.0
+40 error command "node" "/usr/local/bin/npm" "-g" "install"
+41 error cwd /Users/mikaeade/Documents/WebKurssi/AddressBook_nodejs
+42 error node -v v0.10.35
+43 error npm -v 1.4.28
+44 error path /usr/local/lib/node_modules/AddressBook
+45 error fstream_path /usr/local/lib/node_modules/AddressBook
+46 error fstream_type Directory
+47 error fstream_class DirWriter
+48 error code EACCES
+49 error errno 3
+50 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/AddressBook'
+51 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+51 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
+51 error fstream_stack Object.oncomplete (fs.js:108:15)
+52 verbose exit [ 3, true ]

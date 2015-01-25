@@ -13,7 +13,7 @@ app.use(session({secret:'qrt54dlkfhfg9094',resave: false,saveUninitialized: true
 
 
 var routes = require('./routes/index');
-var db = require('./mymodules/dbconnection');
+//var db = require('./mymodules/dbconnection');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -36,6 +36,11 @@ app.use('/getaddressbook', routes.getaddressbook);
 app.use('/new_contact', routes.new_contact);
 app.use('/updateAddressbookData', routes.update_address_book);
 app.use('/contacts', routes.get_contacts);
+
+// modify and delete
+app.use('/modify', routes.modify);
+app.use('/delete', routes.delete);
+app.use('/modifyaddressbookData', routes.modifyaddressbookData);
 
 //app.use('/addToAddressbook', db.addToAddressbook);
 //app.use('/updateAddressbookData', db.updateAddressbookData);

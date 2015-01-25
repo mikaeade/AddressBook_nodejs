@@ -1,9 +1,11 @@
 extends layout
 
 block content
-  h1(id="high") Addressbook Application
+  div
+    h1(id="high") Addressbook Application
+      p(id="logged") #{logged}
   div(class='container')
-    h1(id="hh") #{name}'s Contact Information  
+    h1 #{name}'s Contact Information  
     ul(data-role='listview', data-inset="true")
         li Name: #{name}
         li Address: #{address}
@@ -11,8 +13,13 @@ block content
         li Phonenumber: #{phonenumber}
         li Birthday: #{birthday}
         li Generalinfo: #{generalinfo}   
-    a(href="/getaddressbook") return to contacts.
-    
+        li id only for test: #{_id} 
+        
+        div(id="buttons")
+          a(id="modify", href='/modify?id=#{_id}', data-role="button") Modify
+          a(id="delete", href='/delete?id=#{_id}', data-role="button") Delete
+          a(id="linkki", href="/getaddressbook") return to contacts. 
+      
   script.
         $(".container").mouseover(function() {
             $(this).css('background-color', 'yellow');

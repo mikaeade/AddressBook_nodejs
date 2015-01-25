@@ -2,8 +2,8 @@ var mongoose = require('mongoose');
 
 var loggedin = "";
 
-//tieotkannan nimi
-var uri = "mongodb://localhost/register";
+//tietokannan nimi
+var uri = "mongodb://localhost/database";
 
 // uri = oman db:n nimi ja paikka
 
@@ -20,6 +20,8 @@ exports.initialiseDataBase = function(req,res){
         console.log("Nicely connected to " + uri);
     }                    
     });
+  }
+}
  
 var Schema = mongoose.Schema;
 
@@ -35,7 +37,7 @@ var addressbook = new Schema({
     address: String,
     email: String,
     phonenumber: String,
-    birthday: Date,
+    birthday: String,
     generalinfo: String
 });
 
@@ -44,5 +46,3 @@ var AddressBook =  mongoose.model("AddressBook", addressbook);
 
 exports.Register = Register;
 exports.AddressBook = AddressBook;
-}
-}

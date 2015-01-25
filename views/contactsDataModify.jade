@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1(id="high") Addressbook Application
+  div(class="container")
+    form(action="/modifyaddressbookData", method="put", data-ajax = "false")
+      h2 Modify  contact information
+      input(type="text", name="username", placeholder="name", value='#{name}')
+      input(type="text", name="address", placeholder="Enter address", value='#{address}')
+      input(type="text", name="email", placeholder="Enter email", value='#{email}')
+      input(type="text", name="phonenumber", placeholder="Enter phonenumber", value='#{phonenumber}')
+      input(type="date", name="birthday", placeholder="Enter birthday", value='#{birthday}')
+      input(type="text", name="generalinfo", placeholder="Enter generalinfo", value='#{generalinfo}')
+      input(type="hidden", name='id', value='#{_id}')
+      input(type="submit", value="Save")
+  script.
+        $(".container").mouseover(function() {
+            $(this).css('background-color', 'yellow');
+            });
+        $( ".container" ).mouseleave(function() {
+            $(this).css('background-color', 'white');
+            });    
